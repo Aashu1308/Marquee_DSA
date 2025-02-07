@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enhanced Document</title>
+    <style>
+      :root {
+        --bg-light: #f8f9fa;
+        --text-light: #212529;
+        --bg-dark: #1e1e2e;
+        --text-dark: #e0e0e0;
+        --accent-light: rgba(0, 123, 255, 0.2);
+        --accent-dark: rgba(0, 123, 255, 0.5);
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        transition: background 0.3s, color 0.3s;
+        background: var(--bg-light);
+        color: var(--text-light);
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        background: rgba(255, 255, 255, 0.8);
+        transition: background 0.3s;
+      }
+
+      .dark-mode {
+        background: var(--bg-dark);
+        color: var(--text-dark);
+      }
+
+      .dark-mode .container {
+        background: rgba(30, 30, 46, 0.85);
+      }
+
+      .toggle-btn {
+        display: block;
+        margin: 20px auto;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        background: var(--accent-light);
+        color: var(--text-light);
+        transition: background 0.3s, color 0.3s;
+      }
+
+      .dark-mode .toggle-btn {
+        background: var(--accent-dark);
+        color: var(--text-dark);
+      }
+    </style>
+  </head>
+  <body>
+    <button class="toggle-btn" onclick="toggleDarkMode()">
+      Toggle Dark Mode
+    </button>
+    <div class="container">
+      <h1>Welcome</h1>
+      <p>
+        Links below lead to notes for Code Tantra marquee placement training:
+      </p>
+      <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+      <ul>
+        <li><a href="LL.html">Linked Lists</a></li>
+        <li><a href="Pointers.html">Pointers</a></li>
+        <li><a href="Stacks.html">Stacks</a></li>
+        <li><a href="dm.html">DM</a></li>
+      </ul>
+    </div>
+    <script>
+      function toggleDarkMode() {
+        document.body.classList.toggle('dark-mode');
+      }
+    </script>
+  </body>
+</html>

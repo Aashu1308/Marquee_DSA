@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code Tantra Notes</title>
+    <style>
+      :root {
+        --bg-light: #f8f9fa;
+        --text-light: #212529;
+        --bg-dark: #1e1e2e;
+        --text-dark: #e0e0e0;
+        --accent-light: rgba(0, 123, 255, 0.2);
+        --accent-dark: rgba(0, 123, 255, 0.5);
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        transition: background 0.3s, color 0.3s;
+        background: var(--bg-light);
+        color: var(--text-light);
+        padding: 20px;
+        position: relative;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        background: rgba(255, 255, 255, 0.9);
+        transition: background 0.3s;
+      }
+
+      .dark-mode {
+        background: var(--bg-dark);
+        color: var(--text-dark);
+      }
+
+      .dark-mode .container {
+        background: rgba(30, 30, 46, 0.85);
+      }
+
+      .toggle-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        background: var(--accent-light);
+        color: var(--text-light);
+        transition: background 0.3s, color 0.3s;
+        font-size: 14px;
+      }
+
+      .dark-mode .toggle-btn {
+        background: var(--accent-dark);
+        color: var(--text-dark);
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      li {
+        margin: 10px 0;
+        padding: 15px;
+        background-color: #ffffff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        transition: background-color 0.3s, transform 0.3s;
+      }
+
+      li:hover {
+        background-color: #e7f3ff;
+        transform: scale(1.02);
+      }
+
+      a {
+        text-decoration: none;
+        color: #007bff;
+        font-weight: bold;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .dark-mode li {
+        background-color: #444;
+        border: 1px solid #555;
+      }
+
+      .dark-mode li:hover {
+        background-color: #555;
+      }
+
+      .dark-mode a {
+        color: #66b3ff;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="toggle-btn" onclick="toggleDarkMode()">🌙</button>
+    <div class="container">
+      <h1>Code Tantra Marquee Notes</h1>
+      <p>
+        Links below lead to notes for Code Tantra marquee placement training:
+      </p>
+      <ul>
+        <li><a href="LL.html">Linked Lists</a></li>
+        <li><a href="Pointers.html">Pointers</a></li>
+        <li><a href="Stacks.html">Stacks</a></li>
+        <li><a href="dm.html">DM</a></li>
+      </ul>
+    </div>
+    <script>
+      function toggleDarkMode() {
+        document.body.classList.toggle('dark-mode');
+        localStorage.setItem(
+          'dark-mode',
+          document.body.classList.contains('dark-mode')
+        );
+      }
+
+      if (localStorage.getItem('dark-mode') === 'true') {
+        document.body.classList.add('dark-mode');
+      }
+    </script>
+  </body>
+</html>
